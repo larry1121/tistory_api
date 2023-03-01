@@ -56,18 +56,13 @@
       var redirect_uri = $('#redirect_uri').val().trim();
       var code = $('#code').val().trim();
     
-      const response = await fetch('https://officialpractice-bfcfa.web.app/getAccessToken', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        client_id: client_id,
-        client_secret: client_secret,
-        redirect_uri: redirect_uri ,
-        code: code
-      })
-    });
+      const response = await fetch(`https://officialpractice-bfcfa.web.app/getAccessToken?client_id=${client_id}&client_secret=${client_secret}&redirect_uri=${redirect_uri}&code=${code}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
     
     const data = await response.text().then((result) => {
       console.log(result)
