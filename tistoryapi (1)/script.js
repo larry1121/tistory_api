@@ -45,28 +45,68 @@
         }
       });
     }
-
-
-
-function getAccessTokenInCli() {
+    async function getAccessTokenInCli () {
   
   
-var functions = firebase.functions();
-var getAccessToken = firebase.functions().httpsCallable('getAccessToken');
+      var functions = firebase.functions();
+      var getAccessToken = firebase.functions().httpsCallable('getAccessToken');
+      
+      var client_id = $('#client_id').val().trim();
+      var client_secret = $('#client_secret').val().trim();
+      var redirect_uri = $('#redirect_uri').val().trim();
+      var code = $('#code').val().trim();
+    
+      const response = await fetch('https://officialpractice-bfcfa.web.app/getAccessToken', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        client_id: client_id,
+        client_secret: client_secret,
+        redirect_uri: redirect_uri ,
+        code: code
+      })
+    });
+    
+    const data = await response.text().then((result) => {
+      console.log(result)
+      $('#response').html(result.data);
+    })
+    .catch((error) => {
+          console.log(result)
+          $('#response').html('Error: ' + error.message);
+        });
+    
+      // getAccessToken({client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code})
+      //   .then((result) => {
+      //     $('#response').html(result.data);
+      //   })
+      //   .catch((error) => {
+      //     $('#response').html('Error: ' + error.message);
+      //   });
+      }
 
-var client_id = $('#client_id').val().trim();
-var client_secret = $('#client_secret').val().trim();
-var redirect_uri = $('#redirect_uri').val().trim();
-var code = $('#code').val().trim();
 
-getAccessToken({client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code})
-  .then((result) => {
-    $('#response').html(result.data);
-  })
-  .catch((error) => {
-    $('#response').html('Error: ' + error.message);
-  });
-}
+// function getAccessTokenInCli() {
+  
+  
+// var functions = firebase.functions();
+// var getAccessToken = firebase.functions().httpsCallable('getAccessToken');
+
+// var client_id = $('#client_id').val().trim();
+// var client_secret = $('#client_secret').val().trim();
+// var redirect_uri = $('#redirect_uri').val().trim();
+// var code = $('#code').val().trim();
+
+// getAccessToken({client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code})
+//   .then((result) => {
+//     $('#response').html(result.data);
+//   })
+//   .catch((error) => {
+//     $('#response').html('Error: ' + error.message);
+//   });
+// }
 
     // function getAccessToken() {
     //   var client_id = $('#client_id').val();
