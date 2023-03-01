@@ -66,11 +66,11 @@
     
     const data = await response.text().then((result) => {
       console.log(result)
-      $('#response').html(result.data);
+      $('#tokenresponse').html(result.data);
     })
     .catch((error) => {
           console.log(result)
-          $('#response').html('Error: ' + error.message);
+          $('#tokenresponse').html('Error: ' + error.message);
         });
     
       // getAccessToken({client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code})

@@ -20,7 +20,7 @@ form {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -52,10 +52,35 @@ input[type="button"] {
   cursor: pointer;
 }
 
-#response {
+#response,#tokenresponse {
   margin-top: 30px;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.instruction {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.instruction h2 {
+  color: #333;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.instruction ol {
+  margin-left: 20px;
+}
+
+.instruction p {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 0.8em;
 }
