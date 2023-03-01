@@ -50,25 +50,18 @@
   <div class="instruction">
   <h2>API 요청 페이지 사용법</h2>
   <ol>
-    <li>Tistory 개발자센터(<a href="https://www.tistory.com/guide/api/manage/register" target="_blank">https://www.tistory.com/guide/api/manage/register</a>)에 접속하여 앱 등록을 진행합니다.</li>
-    <li>이때 서비스 URL,CallBack은 자신의 티스토리 주소를 활용합니다.</li>
-    <li>주소 입력 예시 : https://블로그이름.tistory.com/</li>
-    <li>등록한 애플리케이션의 App ID와 Secret Key을 복사하여 이 사이트의 "client_id"와 "client_secret" 입력창에 붙여넣습니다.</li>
-    <li>"redirect_uri" 입력창에는 Tistory 개발자센터에서 설정한 자신의 티스토리 주소를 입력합니다.</li>
+    <li>Tistory 개발자센터(<a href="https://www.tistory.com/guide/api/manage/register" target="_blank">https://www.tistory.com/guide/api/manage/register</a>)에 접속하여 앱 등록을 진행합니다. 이때 서비스 URL,CallBack에는 자신의 티스토리 주소를 입력합니다. 주소 입력 예시 : https://블로그이름.tistory.com/</li>
+    <li>등록한 앱 화면의 App ID와 Secret Key을 복사하여 이 사이트의 "client_id"와 "client_secret" 입력창에 붙여넣습니다.</li>
+    <li>이 사이트의 "redirect_uri" 입력창에는 Tistory 개발자센터에서 설정했던 자신의 티스토리 주소를 입력합니다.</li>
     <li>"인증 코드 url로 이동" 버튼을 눌러 Tistory 계정으로 로그인한 후, "허가하기"를 눌러 인증 코드(Authorization Code)를 발급받습니다.</li>
-    <li>발급된 인증 코드는 "허가하기"를 눌러 이동한 티스토리 블로그의 주소창에서 아래와 같은 형식으로 확인할 수 있습니다.</li>
-    <li>https://블로그이름.com/?code=여기가_인증코드&state=anything</li> 
-    <li>발급된 인증 코드는 1시간 이내에만 사용가능하며 재사용 할 수 없습니다. 에러가 발생하면 위의 과정을 반복하여 인증코드를 재발급해 주세요.</li>
+    <li> 발급된 인증 코드는 "허가하기"를 눌러 이동한 티스토리 블로그의 주소창에서 아래와 같은 형식으로 확인할 수 있습니다. [https://블로그이름.com/?code=여기가_인증코드&state=anything](https://블로그이름.com/?code=여기가_인증코드&state=anything) 발급된 인증 코드는 1시간 이내에만 사용가능하며, 재사용 할 수 없습니다. 에러가 발생하면 위의 과정을 반복하여 인증코드를 재발급해야합니다.</li>
     <li>발급받은 인증 코드를 이 사이트의 "Authorization Code" 입력창에 입력합니다.</li>
-
-    <li>"Access Token 요청" 버튼을 눌러 아래에 access_token=발급된_토큰이 나올때 까지 기다립니다.</li>
-    
+    <li>"Access Token 요청" 버튼을 눌러 아래에 access_token=발급된_토큰이 나타날 때까지 기다립니다.</li>
     <li>"access_token" 입력창에 발급받은 access_token을 복사하여 붙여넣습니다.</li>
-    <li>"blogName" 입력창에는 자신의 Tistory 블로그 이름을 입력합니다.</li>
-    <li>블로그 이름 예시 : https://블로그이름.tistory.com/</li>
+    <li>"blogName" 입력창에는 자신의 Tistory 블로그 이름을 입력합니다. 블로그 이름 예시 : https://블로그이름.tistory.com/</li>
     <li>"카테고리 ID 들고오기" 버튼을 눌러 카테고리 ID를 확인할 수 있습니다.</li>
+    <li>access_token과 카테고리 ID를 통해 티스토리의 글쓰기,수정하기등의 api를 이용할 수 있습니다.</li>
   </ol>
-  <p>※ API 요청 페이지에서 Access Token 요청 기능은 CORS 정책 등의 이유로 작동하지 않을 수 있습니다.</p>
   <p>※ 티스토리 api 문서 : <a href="https://tistory.github.io/document-tistory-apis/" target="_blank">https://tistory.github.io/document-tistory-apis/</a></p>
 </div>
 </body>
