@@ -20,7 +20,7 @@
     function getCategoryID() {
       var access_token = $('#access_token').val().trim();
       var output = "json";
-      var blogName = "inner-everest";
+      var blogName = $('#blogName').val().trim();
 
       var url = "https://www.tistory.com/apis/category/list?" +
         "access_token=" + access_token + "&" +
@@ -48,8 +48,7 @@
     async function getAccessTokenInCli () {
   
   
-      var functions = firebase.functions();
-      var getAccessToken = firebase.functions().httpsCallable('getAccessToken');
+      
       
       var client_id = $('#client_id').val().trim();
       var client_secret = $('#client_secret').val().trim();
@@ -66,69 +65,13 @@
     
     const data = await response.text().then((result) => {
       console.log(result)
-      $('#tokenresponse').html(result.data);
+      $('#tokenresponse').html(result);
     })
     .catch((error) => {
           console.log(result)
           $('#tokenresponse').html('Error: ' + error.message);
         });
     
-      // getAccessToken({client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code})
-      //   .then((result) => {
-      //     $('#response').html(result.data);
-      //   })
-      //   .catch((error) => {
-      //     $('#response').html('Error: ' + error.message);
-      //   });
+     
       }
-
-
-// function getAccessTokenInCli() {
-  
-  
-// var functions = firebase.functions();
-// var getAccessToken = firebase.functions().httpsCallable('getAccessToken');
-
-// var client_id = $('#client_id').val().trim();
-// var client_secret = $('#client_secret').val().trim();
-// var redirect_uri = $('#redirect_uri').val().trim();
-// var code = $('#code').val().trim();
-
-// getAccessToken({client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code})
-//   .then((result) => {
-//     $('#response').html(result.data);
-//   })
-//   .catch((error) => {
-//     $('#response').html('Error: ' + error.message);
-//   });
-// }
-
-    // function getAccessToken() {
-    //   var client_id = $('#client_id').val();
-    //   var client_secret = $('#client_secret').val().trim();
-    //   var redirect_uri = $('#redirect_uri').val().trim();
-    //   var code = $('#code').val().trim();
-
-    //   var url = "https://www.tistory.com/oauth/access_token";
-    //   var data = {
-    //     client_id: client_id,
-    //     client_secret: client_secret,
-    //     redirect_uri: redirect_uri,
-    //     code: code,
-    //     grant_type: "authorization_code"
-    //   };
-
-    //   $.ajax({
-    //     url: url,
-    //     type: "POST",
-    //     data: data,
-    //     success: function (data) {
-    //       $('#response').html(data);
-    //     },
-    //     error: function (xhr, status, error) {
-    //       $('#response').html('Error: ' + error);
-    //     }
-    //   });
-    // }
-
 
