@@ -63,7 +63,7 @@ function getAuthenticationCode() {
   return;
   }
   
-  const response = await fetch("https://officialpractice-bfcfa.web.app/getAccessToken?client_id=${client_id}&client_secret=${client_secret}&redirect_uri=${redirect_uri}&code=${code}", {
+  const response = await fetch(`https://officialpractice-bfcfa.web.app/getAccessToken?client_id=${client_id}&client_secret=${client_secret}&redirect_uri=${redirect_uri}&code=${code}`, {
   method: 'GET',
   headers: {
   'Content-Type': 'application/json'
